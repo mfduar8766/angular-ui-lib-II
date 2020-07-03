@@ -1,0 +1,31 @@
+<div [ngStyle]="stylesClass" class="search-container">
+  <input
+    [class]="
+      isDisabled === true ? 'form-control disabled-class' : 'form-control'
+    "
+    class="input-styles"
+    [placeholder]="placeholder"
+    type="search"
+    pInputText
+    name="searchQuery"
+    [disabled]="isDisabled"
+    [(ngModel)]="searchQuery"
+    (ngModelChange)="handleSearch($event)"
+    [ngStyle]="stylesClass"
+  />
+  <ul
+    [ngStyle]="stylesClass"
+    *ngIf="searchQuery.length > 0"
+    class="cursor-pointer list-container"
+  >
+    <li
+      (click)="sendSearchResult(result, result.value)"
+      class="no-bullets list"
+      style="text-transform: capitalize;"
+      *ngFor="let result of searchResults; let i = index"
+      :key="i"
+    >
+      {{ result.value }}
+    </li>
+  </ul>
+</div>

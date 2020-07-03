@@ -17,7 +17,37 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "my-lib": [
+        "dist/my-lib/my-lib",
+        "dist/my-lib"
+      ],
+      "button": [
+        "dist/button/button",
+        "dist/button"
+      ],
+      "card": [
+        "dist/card/card",
+        "dist/card"
+      ],
+      "modal": [
+        "dist/modal/modal",
+        "dist/modal"
+      ],
+      "sidebar": [
+        "dist/sidebar/sidebar",
+        "dist/sidebar"
+      ],
+      "auto-complete": [
+        "dist/auto-complete/auto-complete",
+        "dist/auto-complete"
+      ],
+      "splitbutton": [
+        "dist/splitbutton/splitbutton",
+        "dist/splitbutton"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

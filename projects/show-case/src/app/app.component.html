@@ -1,0 +1,103 @@
+<lib-button
+  [buttonText]="'Toggle Side Bar'"
+  (click)="toggleSideBar()"
+></lib-button>
+<lib-sidebar [isSideBarOpen]="isSideBarOpen"></lib-sidebar>
+
+<lib-button
+  [buttonText]="'Click Me'"
+  [backgroundColor]="'blue'"
+  (handleClick)="onClick($event)"
+></lib-button>
+
+<lib-card
+  [headerStyles]="{
+    'background-color': 'blue',
+    color: 'white',
+    height: '30px',
+    'border-radius': '0.5rem'
+  }"
+  [showHeader]="'true'"
+  [showFooter]="'true'"
+>
+  <div role="footer">My Footer</div>
+  <div
+    style="height: fit-content; width: fit-content; padding-left: 1rem;"
+    role="header"
+  >
+    Card
+  </div>
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere atque
+  aspernatur quasi quidem eum culpa soluta illum obcaecati doloremque labore,
+  accusamus praesentium illo ut mollitia sint nesciunt et quis voluptatum
+  consectetur fugit odio cumque. Officia natus quo voluptatum, fugiat et sed
+  exercitationem culpa ipsam, numquam nobis modi accusantium repellat quam saepe
+  dignissimos voluptatem eum debitis labore aspernatur, accusamus nesciunt autem
+  provident. Optio eum nostrum adipisci magnam accusantium delectus. Consectetur
+  ipsa deserunt dolores vel quae adipisci est quasi totam quidem autem, suscipit
+  doloribus sapiente facilis facere animi necessitatibus voluptatibus
+  repellendus! Officia eaque iure eligendi optio soluta quos cum commodi debitis
+  aspernatur.
+</lib-card>
+
+<lib-card
+  [headerStyles]="{
+    'background-color': 'blue',
+    color: 'white',
+    height: '30px',
+    'border-radius': '0.5rem'
+  }"
+  [showHeader]="'true'"
+>
+  <div role="footer">My Footer</div>
+  <div
+    style="height: fit-content; width: fit-content; padding-left: 1rem;"
+    role="header"
+  >
+    Modal
+  </div>
+  <lib-button
+    [buttonText]="'Open Modal'"
+    [backgroundColor]="'blue'"
+    (click)="isModalOpen = !isModalOpen"
+  ></lib-button>
+  <lib-modal
+    [classProp]="{
+      height: '50%',
+      width: '50%',
+      color: 'black'
+    }"
+    [isModalOpen]="isModalOpen"
+    (closeModal)="setCloseModal($event)"
+  >
+    <div role="content">MODAL</div>
+  </lib-modal>
+</lib-card>
+
+<lib-card
+  [heightWidth]="{
+    height: '300px'
+  }"
+  [headerStyles]="{
+    'background-color': 'blue',
+    color: 'white',
+    height: '30px',
+    'border-radius': '0.5rem'
+  }"
+  [showHeader]="'true'"
+>
+  <div
+    style="height: fit-content; width: fit-content; padding-left: 1rem;"
+    role="header"
+  >
+    Auto Complete
+  </div>
+  <div style="height: 100%; width: 100%;">
+    <lib-auto-complete
+      [searchArray]="tableData"
+      [showDropDown]="'true'"
+      [placeholder]="'Search agencies'"
+      (selectedSearchResult)="getSelectedResults($event)"
+    ></lib-auto-complete>
+  </div>
+</lib-card>
